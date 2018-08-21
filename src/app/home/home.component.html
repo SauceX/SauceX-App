@@ -1,0 +1,16 @@
+<div class="bg"></div>
+<ons-page [transparent]="true" style="opacity: 0.8;" class="main-page">
+  <ons-toolbar>
+    <div class="center">酱料罐信息</div>
+  </ons-toolbar>
+  <ons-list >
+    <ons-list-title>更新于 {{now|date:'yyyy-MM-dd hh:mm:ss'}}</ons-list-title>
+    <ons-list-item>
+      <div class="bottle-grid">
+        <ul>
+          <li *ngFor="let bottle of bottles; let i = index"><app-bottle [value]="bottle.value" [color]="bottle.color" [label]="bottle.label"></app-bottle></li>
+        </ul>
+      </div>
+    </ons-list-item>
+  </ons-list>
+</ons-page>

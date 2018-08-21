@@ -1,0 +1,12 @@
+
+<div class="{{color}} content">
+  <div class="progress">
+    <div class="inner">
+      <div class="percent label"><span>{{label}}</span></div>
+      <div class="percent"><span>{{value}}</span>%</div>
+      <div class="water" [ngStyle]="{'top':(100-value)+'%'}" ></div>
+      <div class="glare"></div>
+      <div class="glare glare2"></div>
+    </div>
+  </div>
+</div>

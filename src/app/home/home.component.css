@@ -1,0 +1,42 @@
+.bg{
+  position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width: 100%;
+  border: solid 1px;
+  z-index: -1;
+  background-image: url("../../img/sauceX-bg.jpg");
+  -moz-background-size:100% 100%;
+  background-size:100% 100%;
+}
+.main-page{
+  background-color: rgba(255,255,255,0.4);
+}
+ons-page.page--material__background.page__background{
+  background-color: rgba(255,255,255,0);
+}
+.bottle-grid{
+
+  margin: 0; /* 与外界元素的距离为0 */
+  width: 100%; /* 宽度根据元素内容调整 */
+  padding: 0; /* 与内部元素的距离为0 */
+}
+.bottle-grid ul{
+  width: 100%;
+  padding: 30px 0 0 0;
+  list-style:none; /* 去掉ul前面的符号 */
+}
+.bottle-grid li{
+  float:left; /* 向左漂移，将竖排变为横排 */
+  width: 49%;
+  padding-top:50%;
+  text-align: center;
+  position: relative;
+}
+.bottle-grid li app-bottle{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}

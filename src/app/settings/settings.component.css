@@ -1,0 +1,84 @@
+.top-bar{
+  background-color: black;
+  text-align: center;
+  height: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.list-item__thumbnail {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+.icon-grid{
+
+  margin: 0; /* 与外界元素的距离为0 */
+  width: 100%; /* 宽度根据元素内容调整 */
+  padding: 0; /* 与内部元素的距离为0 */
+}
+.icon-grid ul{
+  padding: 30px 0 0 0;
+  list-style:none; /* 去掉ul前面的符号 */
+}
+.icon-grid li{
+  float:left; /* 向左漂移，将竖排变为横排 */
+  width: 33%;
+  height: 120px;
+  text-align: center;
+}
+.icon-grid ons-icon{
+  border: 2px solid;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  line-height: 50px;
+  border-radius: 50%;
+}
+.icon-grid span{
+  font-size: 14px;
+  line-height: 30px;
+}
+.ib1{
+  border-color: deepskyblue;
+  color: deepskyblue;
+}
+.ib2{
+  border-color: forestgreen;
+  color: forestgreen;
+}
+.ib3{
+  border-color: darkkhaki;
+  color: darkkhaki;
+}
+.ib4{
+  border-color: darkslateblue;
+  color: darkslateblue;
+}
+.ib5{
+  border-color: crimson;
+  color: crimson;
+}
+.ib6{
+  border-color: dodgerblue;
+  color: dodgerblue;
+}
+.ib7{
+  border-color: sienna;
+  color: deepskyblue;
+}
+.ib8{
+  border-color: darkgreen;
+  color: darkgreen;
+}
+.ib9{
+  border-color: sienna;
+  color: sienna;
+}
+.bottom-bar{
+  text-align: center;
+  height: 24px;
+  font-size: 12px;
+  line-height: 24px;
+  color: #aaaaaa;
+}

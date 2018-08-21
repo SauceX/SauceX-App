@@ -1,0 +1,13 @@
+<nav class="tabbar" [class.tabbar--material]="material">
+  <label class="tabbar__item" [class.tabbar--material__item]="material" *ngFor="let tab of tabs; let i = index">
+    <!-- <input type="radio" label="tabbar" [checked]="tab === selectedTab"> -->
+    <a class="tabbar__button" [class.tabbar--material__button]="material" [routerLink]="[tab.path]" routerLinkActive='active'>
+      <ons-icon class="ons-icon fa {{tab.icon}}" size="24px"></ons-icon><br>
+
+    </a>
+  </label>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
