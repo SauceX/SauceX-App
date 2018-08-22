@@ -1,14 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, forwardRef, Input } from '@angular/core';
 import { graphic } from 'echarts';
+import { ControlValueAccessor } from '@angular/forms/src/directives';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+  styleUrls: ['./chart.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => ChartComponent),
+      multi: true
+    }
+  ],
 })
-export class ChartComponent implements OnInit {
-
+export class ChartComponent implements OnInit, ControlValueAccessor {
+  protected innerValue: any = [];
   options: any;
+  protected onTouchedCallback: () => void = function() {};
+  protected onChangeCallback: (_: any) => void = function() {};
+  get value(): any {
+    return this.innerValue;
+  }
+
+  set value(v: any) {
+    if (v !== this.innerValue) {
+      this.innerValue = v;
+      this.onChangeCallback(v);
+    }
+  }
+  writeValue(value: any) {
+    if (value !== this.innerValue) {
+      this.innerValue = value;
+    }
+  }
+
+  registerOnChange(fn: any) {
+    this.onChangeCallback = fn;
+  }
+  registerOnTouched(fn: any) {
+    this.onTouchedCallback = fn;
+  }
+
+
 
   constructor() { }
 
