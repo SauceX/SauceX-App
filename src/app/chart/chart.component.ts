@@ -2,6 +2,7 @@ import { Component, OnInit, forwardRef, Input } from '@angular/core';
 import { graphic } from 'echarts';
 import { ControlValueAccessor } from '@angular/forms/src/directives';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import {ChartData} from "./ChartData";
 
 @Component({
   selector: 'app-chart',
@@ -16,10 +17,10 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class ChartComponent implements OnInit, ControlValueAccessor {
-  protected innerValue: any = [];
+  private  innerValue: Array<ChartData> = [];
   options: any;
-  protected onTouchedCallback: () => void = function() {};
-  protected onChangeCallback: (_: any) => void = function() {};
+  private  onTouchedCallback: () => void = function() {};
+  private  onChangeCallback: (_: any) => void = function() {};
   get value(): any {
     return this.innerValue;
   }
@@ -33,6 +34,9 @@ export class ChartComponent implements OnInit, ControlValueAccessor {
   writeValue(value: any) {
     if (value !== this.innerValue) {
       this.innerValue = value;
+    }
+    if (this.innerValue) {
+      this.ngOnInit();
     }
   }
 
@@ -62,7 +66,7 @@ export class ChartComponent implements OnInit, ControlValueAccessor {
 
     this.options = {
       legend: {
-        data: ['酱油', '醋'],
+        data: [],
         align: 'left'
       },
       tooltip: {},
@@ -75,26 +79,27 @@ export class ChartComponent implements OnInit, ControlValueAccessor {
       },
       yAxis: {
       },
-      series: [{
-        name: '醋',
-        type: 'bar',
-        data: data1,
-        animationDelay: function (idx) {
-          return idx * 10;
-        }
-      }, {
-        name: '酱油',
-        type: 'bar',
-        data: data2,
-        animationDelay: function (idx) {
-          return idx * 10 + 100;
-        }
-      }],
+      series: [],
       animationEasing: 'elasticOut',
       animationDelayUpdate: function (idx) {
         return idx * 5;
       }
     };
+    this.drawData();
+  }
+  drawData() {
+
+    for (const data: ChartData of this.innerValue) {
+      this.options.legend.data.push(data.name);
+      this.options.series.push({
+        name: data.name,
+        type: 'bar',
+        data: data.data,
+        animationDelay: function (idx) {
+          return idx * 10;
+        }
+      });
+    }
   }
 
 }

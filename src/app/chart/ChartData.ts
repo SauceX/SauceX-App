@@ -1,4 +1,4 @@
 export class ChartData {
-  name:string;
-  d
+  name: string;
+  data: Array<number>;
 }

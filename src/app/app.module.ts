@@ -15,6 +15,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { BottleComponent } from './bottle/bottle.component';
 import { ChartComponent } from './chart/chart.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     OnsenModule,
     AppRoutingModule,
     NgxEchartsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
