@@ -16,6 +16,8 @@ import { BottleComponent } from './bottle/bottle.component';
 import { ChartComponent } from './chart/chart.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FormsModule } from '@angular/forms';
+import { CookbookComponent } from './cookbook/cookbook.component';
+import { CookComponent } from './cook/cook.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { FormsModule } from '@angular/forms';
     ConfigComponent,
     SettingsComponent,
     BottleComponent,
-    ChartComponent
+    ChartComponent,
+    CookbookComponent,
+    CookComponent
   ],
   imports: [
     BrowserModule,

@@ -5,14 +5,18 @@ import {DeviceComponent} from './device/device.component';
 import {StatisticsComponent} from './statistics/statistics.component';
 import {ConfigComponent} from './config/config.component';
 import {SettingsComponent} from './settings/settings.component';
+import {CookbookComponent} from "./cookbook/cookbook.component";
+import {CookComponent} from "./cook/cook.component";
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: CookbookComponent},
   {path: 'home', component: HomeComponent},
   {path: 'device', component: DeviceComponent},
   {path: 'statistics', component: StatisticsComponent},
   {path: 'config', component: ConfigComponent},
   {path: 'settings', component: SettingsComponent},
+  {path: 'cookbook', component: CookbookComponent},
+  {path: 'cook', component: CookComponent},
 ];
 
 @NgModule({

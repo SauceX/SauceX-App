@@ -2,7 +2,7 @@ import { Component, OnInit, forwardRef, Input } from '@angular/core';
 import { graphic } from 'echarts';
 import { ControlValueAccessor } from '@angular/forms/src/directives';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import {ChartData} from "./ChartData";
+import {ChartData} from './ChartData';
 
 @Component({
   selector: 'app-chart',
@@ -89,7 +89,7 @@ export class ChartComponent implements OnInit, ControlValueAccessor {
   }
   drawData() {
 
-    for (const data: ChartData of this.innerValue) {
+    for (const data of this.innerValue) {
       this.options.legend.data.push(data.name);
       this.options.series.push({
         name: data.name,
