@@ -1,0 +1,33 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="left" [routerLink]="'/config'" routerLinkActive='active'>&lt;</div>
+    <div class="center">新增酱料配置</div>
+  </ons-toolbar>
+  <div class="content" style="background: white;">
+    <ons-card>
+      <ons-input placeholder="名称" [(value)]="value.name" style="width:100%"></ons-input>
+    </ons-card>
+
+    <ons-list modifier="inset">
+      <ons-list-item>
+        <div class="title">配比</div>
+        <table>
+          <tr *ngFor="let name of value.BottleSet; let i = index">
+            <td>{{name}}</td>
+            <td><ons-range modifier="material" [(value)]="value.values[i]" style="width:100%"></ons-range></td>
+            <td>{{value.values[i]}}ml</td>
+          </tr>
+        </table>
+      </ons-list-item>
+      <ons-list-item modifier="longdivider">自动混合酱料
+        <div class="right">
+          <ons-switch [value]="value.mix"></ons-switch>
+        </div>
+      </ons-list-item>
+    </ons-list>
+    <ons-card>
+      <ons-button style="width:100%;margin-bottom: 10px" (click)="save()" [disabled]="!value.name">保存</ons-button>
+    </ons-card>
+  </div>
+
+</ons-page>

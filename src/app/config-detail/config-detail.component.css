@@ -1,0 +1,11 @@
+table{
+  width:100%;
+}
+table tr td:nth-child(1) {
+  width:50px;
+  text-align:right;
+}
+table tr td:nth-child(3) {
+  width:50px;
+  text-align:right;
+}
