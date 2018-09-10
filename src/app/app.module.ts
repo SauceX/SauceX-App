@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { CookbookComponent } from './cookbook/cookbook.component';
 import { CookComponent } from './cook/cook.component';
 import { ConfigDetailComponent } from './config-detail/config-detail.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { ConfigDetailComponent } from './config-detail/config-detail.component';
     AppRoutingModule,
     NgxEchartsModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

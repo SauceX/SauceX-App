@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as ons from 'onsenui';
-import { Http } from '@angular/http';
-import { Headers, RequestOptions, URLSearchParams } from '@angular/http';
+import {IotService} from '../iot.service';
 
 @Component({
   selector: 'app-cook',
@@ -10,21 +9,13 @@ import { Headers, RequestOptions, URLSearchParams } from '@angular/http';
 })
 export class CookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private iotService: IotService) { }
 
   ngOnInit() {
   }
 
   toastStart() {
-    const data = new URLSearchParams();
-    const bodyData = {
-      'UUID': 'nullfy6HS'
-    };
-    data.append('body', JSON.stringify(bodyData));
-    data.append('tradeCode', '0002');
-    data.append('tradeType', 'authService');
-    this.http.post('', data, this.options);
-
+    this.iotService.postCook().subscribe(result => console.log(result));
     ons.notification.toast('已同步至终端,在臻美味智能酱料罐上按开始键后即出蘸料!', {timeout: 5000});
   }
 
