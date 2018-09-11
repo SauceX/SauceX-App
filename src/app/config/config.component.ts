@@ -11,9 +11,9 @@ export class ConfigComponent implements OnInit {
   now = new Date();
   iotConfigs: Array<ConfigDetail>;
   cloudConfigs: Array<ConfigDetail>;
-  constructor(private mockService: MockService) {
-    this.iotConfigs = this.mockService.getIotConfigs();
-    this.cloudConfigs = this.mockService.getCloudConfigs();
+  constructor() {
+    this.iotConfigs = MockService.getIotConfigs();
+    this.cloudConfigs = MockService.getCloudConfigs();
   }
 
   ngOnInit() {

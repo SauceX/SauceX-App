@@ -15,7 +15,7 @@
       </div>
     </ons-list-item>
     <ons-list-item *ngFor="let config of cloudConfigs; let i = index" modifier="longdivider"
-                   [routerLink]="'/configDetail'" [queryParams]="{'data':cloudConfigs[i]}">
+                   [routerLink]="'/configDetail'" [queryParams]="{id:i}">
       {{config.name||'无名'}}
       <div class="right">
         <ons-switch [value]="true"></ons-switch>

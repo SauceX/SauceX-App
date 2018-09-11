@@ -21,7 +21,7 @@ export class IotService {
     formData.append('condiment3', '0');
     formData.append('condiment4', '0');
     return this.http.post<string>(this.iotUrl,
-      formData,{responseType: 'text'}
+      formData
   ).pipe(
       tap(() => console.log(`postCook`)),
       catchError(this.handleError('postCook', ''))

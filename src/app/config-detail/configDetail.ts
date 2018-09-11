@@ -6,7 +6,7 @@ export class ConfigDetail {
   set mix(value: boolean) {
     this._mix = value;
   }
-  BottleSet: Array<string> = ['酱油', '醋', '香油', '料酒'];
+  static BottleSet: Array<string> = ['酱油', '醋', '香油', '料酒'];
   get values(): Array<number> {
     return this._values;
   }

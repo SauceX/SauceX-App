@@ -12,7 +12,7 @@
       <ons-list-item>
         <div class="title">配比</div>
         <table>
-          <tr *ngFor="let name of value.BottleSet; let i = index">
+          <tr *ngFor="let name of bottleSet; let i = index">
             <td>{{name}}</td>
             <td><ons-range modifier="material" [(value)]="value.values[i]" style="width:100%"></ons-range></td>
             <td>{{value.values[i]}}ml</td>
