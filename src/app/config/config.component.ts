@@ -10,8 +10,10 @@ import {MockService} from '../mock.service';
 export class ConfigComponent implements OnInit {
   now = new Date();
   iotConfigs: Array<ConfigDetail>;
+  cloudConfigs: Array<ConfigDetail>;
   constructor(private mockService: MockService) {
     this.iotConfigs = this.mockService.getIotConfigs();
+    this.cloudConfigs = this.mockService.getCloudConfigs();
   }
 
   ngOnInit() {

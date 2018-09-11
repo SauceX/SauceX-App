@@ -19,4 +19,12 @@ export class MockService {
       {},
       ];
   }
+  public getCloudConfigs(): Array<any> {
+    return [
+      {name: '老婆的饺子蘸料'},
+      {name: '北京烤鸭完美组合'},
+      {name: '五香牛肉-网红推荐'},
+      {name: '健康饮食推荐'},
+      ];
+  }
 }

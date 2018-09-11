@@ -14,24 +14,11 @@
         <ons-fab modifier="mini" [routerLink]="'/configDetail'" routerLinkActive='active'><ons-icon icon="fa-plus"></ons-icon></ons-fab>
       </div>
     </ons-list-item>
-    <ons-list-item modifier="longdivider">老婆的饺子蘸料
+    <ons-list-item *ngFor="let config of cloudConfigs; let i = index" modifier="longdivider"
+                   [routerLink]="'/configDetail'" [queryParams]="{'data':cloudConfigs[i]}">
+      {{config.name||'无名'}}
       <div class="right">
         <ons-switch [value]="true"></ons-switch>
-      </div>
-    </ons-list-item>
-    <ons-list-item modifier="longdivider">北京烤鸭完美组合
-      <div class="right">
-        <ons-switch [value]="true"></ons-switch>
-      </div>
-    </ons-list-item>
-    <ons-list-item modifier="longdivider">五香牛肉-网红推荐
-      <div class="right">
-        <ons-switch></ons-switch>
-      </div>
-    </ons-list-item>
-    <ons-list-item modifier="longdivider">健康饮食推荐
-      <div class="right">
-        <ons-switch></ons-switch>
       </div>
     </ons-list-item>
   </ons-list>

@@ -9,3 +9,6 @@ table tr td:nth-child(3) {
   width:50px;
   text-align:right;
 }
+.left{
+  margin-left: 20px;
+}
