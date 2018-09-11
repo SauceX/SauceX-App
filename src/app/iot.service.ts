@@ -3,23 +3,28 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of} from 'rxjs';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 @Injectable({
   providedIn: 'root'
 })
 export class IotService {
 
-  private iotUrl = 'http://116.62.214.38/?Order=0&Name=殷振南测试01&condiment1=5&condiment2=0&condiment3=0&condiment4=0';  // URL to web api
+  private iotUrl = 'https://test.miniqiang.com';  // URL to web api
 
   constructor(private http: HttpClient) { }
 
-  postCook(): Observable<string[]> {
-    return this.http.get<string[]>(this.iotUrl,
-      httpOptions).pipe(
+  postCook(): Observable<string> {
+    const formData: FormData = new FormData();
+    formData.append('Order', '0');
+    formData.append('Name', '殷振南测试02');
+    formData.append('condiment1', '20');
+    formData.append('condiment2', '5');
+    formData.append('condiment3', '0');
+    formData.append('condiment4', '0');
+    return this.http.post<string>(this.iotUrl,
+      formData,{responseType: 'text'}
+  ).pipe(
       tap(() => console.log(`postCook`)),
-      catchError(this.handleError('postCook', []))
+      catchError(this.handleError('postCook', ''))
     );
   }
 
