@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ConfigDetail} from '../config-detail/configDetail';
+import {MockService} from '../mock.service';
 
 @Component({
   selector: 'app-config',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigComponent implements OnInit {
   now = new Date();
-  constructor() { }
+  iotConfigs: Array<ConfigDetail>;
+  constructor(private mockService: MockService) {
+    this.iotConfigs = this.mockService.getIotConfigs();
+  }
 
   ngOnInit() {
   }
