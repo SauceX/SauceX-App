@@ -18,7 +18,7 @@
                    [routerLink]="'/configDetail'" [queryParams]="{id:i}">
       {{config.name||'无名'}}
       <div class="right">
-        <ons-switch [value]="true"></ons-switch>
+        <ons-button (click)="showActionSheet(i, $event)">上传</ons-button>
       </div>
     </ons-list-item>
   </ons-list>

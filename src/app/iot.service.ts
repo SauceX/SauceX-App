@@ -12,14 +12,14 @@ export class IotService {
 
   constructor(private http: HttpClient) { }
 
-  postCook(): Observable<string> {
+  postCook(cook: any): Observable<string> {
     const formData: FormData = new FormData();
-    formData.append('Order', '0');
-    formData.append('Name', '殷振南测试02');
-    formData.append('condiment1', '20');
-    formData.append('condiment2', '5');
-    formData.append('condiment3', '0');
-    formData.append('condiment4', '0');
+    formData.append('Order', cook.order);
+    formData.append('Name', cook.name);
+    formData.append('condiment1', cook.values[0]);
+    formData.append('condiment2', cook.values[1]);
+    formData.append('condiment3', cook.values[2]);
+    formData.append('condiment4', cook.values[3]);
     return this.http.post<string>(this.iotUrl,
       formData
   ).pipe(
