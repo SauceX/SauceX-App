@@ -22,10 +22,12 @@ export class IotService {
     formData.append('condiment4', cook.values[3]);
     return this.http.post<string>(this.iotUrl,
       formData
-  ).pipe(
+  )
+      .pipe(
       tap(() => console.log(`postCook`)),
       catchError(this.handleError('postCook', ''))
-    );
+    )
+      ;
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
