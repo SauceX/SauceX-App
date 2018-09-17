@@ -1,10 +1,10 @@
 <div class="bg"></div>
 <ons-page [transparent]="true" style="opacity: 0.8;" class="main-page">
   <ons-toolbar>
-    <div class="center">酱料罐信息</div>
+    <div class="center">信息统计</div>
   </ons-toolbar>
   <ons-list >
-    <ons-list-title>更新于 {{now|date:'yyyy-MM-dd hh:mm:ss'}}</ons-list-title>
+    <ons-list-title>更新于 {{now|date:'yyyy-MM-dd HH:mm:ss'}}</ons-list-title>
     <ons-list-item>
       <div class="bottle-grid">
         <ul>
@@ -14,4 +14,26 @@
     </ons-list-item>
   </ons-list>
   <app-chart [(ngModel)]="chartDataArr"></app-chart>
+  <div class="card card-accent-info">
+    <div class="card-body">
+      <div class="mt-4">
+      <div echarts [options]="optionsSalt" class="demo-chart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card card-accent-info">
+    <div class="card-body">
+      <div class="mt-4">
+        <div echarts [options]="optionsDiet" class="demo-chart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card card-accent-info">
+    <div class="card-body">
+      <h4 class="card-title">健康小助手</h4>
+      <div class="mt-4">
+        {{healthTip}}
+      </div>
+    </div>
+  </div>
 </ons-page>

@@ -20,6 +20,7 @@ import { CookbookComponent } from './cookbook/cookbook.component';
 import { CookComponent } from './cook/cook.component';
 import { ConfigDetailComponent } from './config-detail/config-detail.component';
 import {HttpClientModule} from '@angular/common/http';
+import { MarketComponent } from './market/market.component';
 
 
 
@@ -36,7 +37,8 @@ import {HttpClientModule} from '@angular/common/http';
     ChartComponent,
     CookbookComponent,
     CookComponent,
-    ConfigDetailComponent
+    ConfigDetailComponent,
+    MarketComponent
   ],
   imports: [
     BrowserModule,

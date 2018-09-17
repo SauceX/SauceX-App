@@ -15,10 +15,10 @@ export class TabbarComponent implements OnInit {
 
   constructor() {
     this.tabs = [
-      {path: 'cookbook', label: '首页',},
-      {path: 'home', label: '烹饪',},
+      {path: 'cookbook', label: '菜谱',},
+      {path: 'home', label: '状态',},
       {path: 'config', label: 'config', icon: 'fa-plus',},
-      {path: 'statistics', label: '商业',},
+      {path: 'market', label: '商城',},
       {path: 'settings', label: '我的',},
     ];
     this.material = onsPlatform.isAndroid();

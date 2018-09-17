@@ -56,10 +56,10 @@ export class ChartComponent implements OnInit, ControlValueAccessor {
     const data1 = [];
     const data2 = [];
 
-    for (let i = 50; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
       const day = new Date();
-      day.setDate(day.getDate() - (100 - i));
-      xAxisData.push(day.getMonth() + '-' + day.getDate());
+      day.setDate(day.getDate() - (50 - i));
+      xAxisData.push((day.getMonth() + 1) + '-' + day.getDate());
       data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
       data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
     }

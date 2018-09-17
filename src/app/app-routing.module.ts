@@ -5,9 +5,10 @@ import {DeviceComponent} from './device/device.component';
 import {StatisticsComponent} from './statistics/statistics.component';
 import {ConfigComponent} from './config/config.component';
 import {SettingsComponent} from './settings/settings.component';
-import {CookbookComponent} from "./cookbook/cookbook.component";
-import {CookComponent} from "./cook/cook.component";
-import {ConfigDetailComponent} from "./config-detail/config-detail.component";
+import {CookbookComponent} from './cookbook/cookbook.component';
+import {CookComponent} from './cook/cook.component';
+import {ConfigDetailComponent} from './config-detail/config-detail.component';
+import {MarketComponent} from './market/market.component';
 
 const routes: Routes = [
   {path: '', component: CookbookComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'cookbook', component: CookbookComponent},
   {path: 'cook', component: CookComponent},
   {path: 'configDetail', component: ConfigDetailComponent},
+  {path: 'market', component: MarketComponent},
 ];
 
 @NgModule({
